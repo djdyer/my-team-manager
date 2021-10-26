@@ -6,7 +6,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
+- [User Story](#user-story)
 - [License](#license)
 - [Screenshots/Demo](#screenshots-demo)
 - [Criteria](#acceptance-criteria)
@@ -38,6 +38,10 @@ SO THAT I have quick access to their emails and GitHub profiles
 ISC License  
 Copyright (c) David Dyer [2021]  
 [![](Assets/icons/isc.svg)](./Develop/license.txt)
+
+<br />
+
+## Screenshots / Demo
 
 <br />
 

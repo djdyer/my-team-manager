@@ -1,0 +1,17 @@
+{
+  "name": "my-team-manager",
+  "version": "1.0.0",
+  "description": "Create team cards, manage info",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "David Dyer",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
