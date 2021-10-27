@@ -1,4 +1,4 @@
-function generateHTML(answers) {
+function generateManager(answers) {
   return `<!DOCTYPE html>
     <html>
       <head>
@@ -43,4 +43,4 @@ function generateHTML(answers) {
   `;
 }
 
-module.exports = generateHTML;
+module.exports = generateManager;

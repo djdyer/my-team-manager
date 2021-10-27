@@ -1,7 +1,7 @@
 // Required packages for application to run:
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHTML = require("./manager.js");
+const generateManager = require("./manager.js");
 const generateCSS = require("./generateStyle.js");
 // const generateEngineer = require("./engineer.js");
 // const generateDesigner = require("./designer.js");
@@ -16,7 +16,7 @@ const managerPrompts = [
     name: "manager_name",
   },
   {
-    type: "input",
+    type: "number",
     message: "The is the Team Manager's employee ID?",
     name: "manager_id",
   },
@@ -26,7 +26,7 @@ const managerPrompts = [
     name: "manager_email",
   },
   {
-    type: "input",
+    type: "number",
     message: "What is the Team Manager's office number?",
     name: "manager_office",
   },
@@ -50,7 +50,7 @@ const engineerPrompts = [
     name: "engineer_name",
   },
   {
-    type: "input",
+    type: "number",
     message: "The is your Engineer's employee ID?",
     name: "engineer_id",
   },
@@ -74,7 +74,7 @@ const designerPrompts = [
     name: "designer_name",
   },
   {
-    type: "input",
+    type: "number",
     message: "The is your Designer's employee ID?",
     name: "designer_id",
   },
@@ -98,7 +98,7 @@ const internPrompts = [
     name: "intern_name",
   },
   {
-    type: "input",
+    type: "number",
     message: "The is your Intern's employee ID?",
     name: "intern_id",
   },
@@ -119,18 +119,18 @@ function startTeam() {
   inquirer.prompt(managerPrompts).then((answers) => {
     console.log(answers);
     const style = generateCSS();
-    const markup = generateHTML(answers);
+    const manager = generateManager(answers);
     fs.writeFile("style.css", style, function (err) {
       if (err) {
         console.log(err);
       }
     });
-    fs.writeFile("index.html", markup, function (err) {
+    fs.writeFile("index.html", manager, function (err) {
       if (err) {
         console.log(err);
       }
     });
-    return buildTeam();
+    // return buildTeam();
   });
 }
 
@@ -138,14 +138,14 @@ function startTeam() {
 startTeam();
 
 // Function to build team
-function buildTeam() {
-  inquirer.prompt(addTeam).then((answer) => {
-    console.log(answer);
-  });
-}
+// function buildTeam() {
+//   inquirer.prompt(addTeam).then((answer) => {
+//     console.log(answer);
+//   });
+// }
 
 // Call to build team
-buildTeam();
+// buildTeam();
 
 // function addEngineer() {
 //   inquirer.prompt(engineerPrompts).then((answers) => {
