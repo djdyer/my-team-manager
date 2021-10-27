@@ -3,8 +3,12 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateHTML = require("./manager.js");
 const generateCSS = require("./generateStyle.js");
+// const generateEngineer = require("./engineer.js");
+// const generateDesigner = require("./designer.js");
+// const generateIntern = require("./intern.js");
 
 // Object arrays for all employee types
+// First object is prompts for team manager card
 const managerPrompts = [
   {
     type: "input",
@@ -28,6 +32,7 @@ const managerPrompts = [
   },
 ];
 
+// Second object is SINGLE / MULTI-CHOICE prompt to add new team members or finish
 const addTeam = [
   {
     type: "list",
@@ -37,6 +42,7 @@ const addTeam = [
   },
 ];
 
+// Prompts to complete Engineer card
 const engineerPrompts = [
   {
     type: "input",
@@ -60,6 +66,7 @@ const engineerPrompts = [
   },
 ];
 
+// Prompts to complete Designer card
 const designerPrompts = [
   {
     type: "input",
@@ -83,6 +90,7 @@ const designerPrompts = [
   },
 ];
 
+// Prompts to complete Intern card
 const internPrompts = [
   {
     type: "input",
@@ -122,13 +130,14 @@ function startTeam() {
         console.log(err);
       }
     });
+    return buildTeam();
   });
 }
 
 // Call to initialize app
 startTeam();
 
-// Function to add more team members
+// Function to build team
 function buildTeam() {
   inquirer.prompt(addTeam).then((answer) => {
     console.log(answer);
@@ -137,3 +146,42 @@ function buildTeam() {
 
 // Call to build team
 buildTeam();
+
+// function addEngineer() {
+//   inquirer.prompt(engineerPrompts).then((answers) => {
+//     console.log(answers);
+//     const engineer = generateEngineer(answers);
+//     fs.reWriteFile("index.html", engineer, function (err) {
+//       if (err) {
+//         console.log(err);
+//       }
+//     });
+//   });
+// }
+// addEngineer();
+
+// function addDesigner() {
+//   inquirer.prompt(designerPrompts).then((answers) => {
+//     console.log(answers);
+//     const designer = generateDesigner(answers);
+//     fs.reWriteFile("index.html", designer, function (err) {
+//       if (err) {
+//         console.log(err);
+//       }
+//     });
+//   });
+// }
+// addDesigner();
+
+// function addIntern() {
+//   inquirer.prompt(internPrompts).then((answers) => {
+//     console.log(answers);
+//     const intern = generateIntern(answers);
+//     fs.reWriteFile("index.html", intern, function (err) {
+//       if (err) {
+//         console.log(err);
+//       }
+//     });
+//   });
+// }
+// addIntern();

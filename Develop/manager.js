@@ -40,9 +40,6 @@ function generateHTML(answers) {
               </div>
             </div>
           </article>
-        </main>
-      </body>
-    </html>
   `;
 }
 
