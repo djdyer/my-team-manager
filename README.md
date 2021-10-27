@@ -16,9 +16,13 @@
 
 ## Description
 
+A Node.js command-line application that accepts user information about employees on software engineering team, and then generates an HTML webpage that displays a summary of each team member.
+
 <br />
 
 ## Installation
+
+Application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input and will run with npm install. Must type 'node index' in command-line to initialize.
 
 <br />
 
@@ -43,6 +47,7 @@ Copyright (c) David Dyer [2021]
 
 ## Screenshots / Demo
 
+(Must show all tests passing from the command line.)
 <br />
 
 ## Acceptance Criteria
@@ -50,13 +55,29 @@ Copyright (c) David Dyer [2021]
 ```
 Command-line application accepts user input.
 
-When prompted for team member info, HTML file is generated to display details.
+Team Manager initializes app by providing name, employee ID, email address, and office number.
 
-Email address click populates default email program with TO field loaded.
+Then is presented with menu to add more team members or finish building team.
 
+When selecting the Engineer option, is prompted to provide name, employee ID, email address and github.
 
+When selecting the Designer option, is prompted to provide name, employee ID, email address and porfolio link.
+
+When selecting the Intern option, is prompted to provide name, employee ID, email address, and school.
+
+After finishing team, an HTML file is generated to display all details.
+
+Email address clicks to populate default email program with TO field loaded.
+
+GitHub username clicks to open profile in new tab.
 
 ```
+
+<br />
+
+## Testing
+
+Application uses [Jest](https://www.npmjs.com/package/jest) for running all unit tests.
 
 ## Collaboration
 

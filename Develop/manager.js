@@ -7,6 +7,10 @@ function generateHTML(answers) {
         <title>Team Manager</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500&display=swap" rel="stylesheet">
+      </head>
       </head>
       <body>
         <header>
@@ -16,10 +20,10 @@ function generateHTML(answers) {
           <article class="card-border">
             <di class="card">
               <div class="header">
+                <img id="icon" src="../Assets/icons/manager_gradient.png" />
+                <div class="nameTitle">
                 <h2 id="employeeName">${answers.manager_name}</h2>
-                <div class="iconTitle">
-                  <img id="icon" src="../Assets/icons/manager_gradient.png" />
-                  <h3 id="jobTitle">Team Manager</h3>
+                <h3 id="jobTitle">Team Manager</h3>
                 </div>
               </div>
               <div class="details">

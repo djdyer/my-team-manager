@@ -1,74 +1,101 @@
+// Returns string of entire style sheet
 function generateCSS() {
   return `* {
-          margin: 0;
-          padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+  }
   
-        body {
-          background-color: #051014;
-          height: 100vh;
-          place-items: center;
-        }
+  body {
+    background-color: #051014;
+    height: 100vh;
+    place-items: center;
+  }
   
-        header {
-          height: 150px;
-          background-color: #2e2f2f;
-          text-align: center;
-          width: 100%;
-        }
+  header {
+    height: 150px;
+    background-color: #2e2f2f;
+    text-align: center;
+    width: 100%;
+  }
   
-        h1 {
-          color: #42bfdd;
-        }
+  h1 {
+    padding-top: 50px;
+  }
   
-        main {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          margin-left: 50px;
-          margin-top: 50px;
-        }
+  h1,
+  h2 {
+    font-family: "Comfortaa", cursive;
+    color: #42bfdd;
+    margin-bottom: 10px;
+  }
   
-        article,
-        .labels,
-        .answers {
-          display: flex;
-          flex-direction: column;
-        }
+  h4 {
+    font-family: "Comfortaa", cursive;
+    color: #f0f6f6;
+    padding: 15px 0;
+  }
   
-        .card-border {
-          max-width: 300px;
-          padding: 1rem;
-          position: relative;
-          background: linear-gradient(to right, #42bfdd, #7b79e2);
-          border-radius: 10pt;
-          /* box-shadow: ; */
-          padding: 3px;
-        }
+  h3 {
+    font-family: "Comfortaa", cursive;
+    color: #7b79e2;
+  }
   
-        .card {
-          background: #051014;
-          color: #f0f6f6;
-          padding: 2rem;
-          border-radius: 10pt;
-        }
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-top: 50px;
+    justify-content: center;
+  }
   
-        .header {
-          background-color: #2e2f2f;
-          color: #f0f6f6;
-        }
+  article,
+  .labels,
+  .answers {
+    display: flex;
+    flex-direction: column;
+  }
   
-        .iconTitle,
-        .details {
-          display: flex;
-          flex-direction: row;
-        }
+  .card-border {
+    width: 350px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, #42bfdd, #7b79e2);
+    border-radius: 10pt;
+    box-shadow: 0px 5px 30px rgb(0, 0, 0);
+    padding: 3px;
+    margin: 20px 30px 30px 10px;
+  }
   
-        #icon {
-          width: 50px;
-          height: auto;
-        }
-        `;
+  .card {
+    background: #051014;
+    padding: 2rem;
+    border-radius: 10pt;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .nameTitle {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #icon {
+    width: 55px;
+    height: auto;
+    margin: 0 30px 0 10px;
+  }
+`;
 }
 
 module.exports = generateCSS;

@@ -1,7 +1,7 @@
 // Required packages for application to run:
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHTML = require("./logger.js");
+const generateHTML = require("./manager.js");
 const generateCSS = require("./generateStyle.js");
 
 // Object arrays for all employee types
@@ -107,7 +107,7 @@ const internPrompts = [
 ];
 
 // Function to initialize app
-function buildTeam() {
+function startTeam() {
   inquirer.prompt(managerPrompts).then((answers) => {
     console.log(answers);
     const style = generateCSS();
@@ -126,4 +126,14 @@ function buildTeam() {
 }
 
 // Call to initialize app
+startTeam();
+
+// Function to add more team members
+function buildTeam() {
+  inquirer.prompt(addTeam).then((answer) => {
+    console.log(answer);
+  });
+}
+
+// Call to build team
 buildTeam();
