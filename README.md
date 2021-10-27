@@ -5,11 +5,12 @@
 ## Table of Contents
 
 - [Description](#description)
-- [Installation](#installation)
 - [User Story](#user-story)
+- [Installation](#installation)
 - [License](#license)
 - [Screenshots/Demo](#screenshots-demo)
 - [Criteria](#acceptance-criteria)
+- [Testing](#testing)
 - [Collaboration](#collaboration)
 
 <br />
@@ -17,12 +18,6 @@
 ## Description
 
 A Node.js command-line application that accepts user information about employees on software engineering team, and then generates an HTML webpage that displays a summary of each team member.
-
-<br />
-
-## Installation
-
-Application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input and will run with npm install. Must type 'node index' in command-line to initialize.
 
 <br />
 
@@ -36,12 +31,18 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 <br />
 
-## License
+## Installation
+
+Application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input and will run with npm install. Must type 'node index' in command-line to initialize.
 
 <br />
-ISC License  
-Copyright (c) David Dyer [2021]  
-[![](Assets/icons/isc.svg)](./Develop/license.txt)
+
+## License
+
+<img src="./Assets/icons/isc.svg" height="20px"> <br />
+Copyright (c) David Dyer [2021]
+
+[license](https://choosealicense.com/licenses/isc/)
 
 <br />
 
@@ -79,18 +80,25 @@ GitHub username clicks to open profile in new tab.
 
 Application uses [Jest](https://www.npmjs.com/package/jest) for running all unit tests.
 
+<br />
+
 ## Collaboration
 
 Development efforts most often include guidance from Jedi Master: **Chris Champness**
 
 [![](https://avatars.githubusercontent.com/u/87551272?v=4?width=100&button=false)](https://github.com/CChampness)
 
+<br />
+
 **Reporting issues**:  
-Contact @djdyer to report bugs.
+Contact [djdyer](https://www.github.com/djdyer) to report bugs.
+
+<br />
 
 **Contributions**:  
 Clone branch, submit pull request for review after completing any improvements.
 
+<br />
 <br />
 
 Thanks for taking a look!  
