@@ -1,3 +1,26 @@
+// const Employee = require("./index.js");
+
+// class Manager extends Employee {
+//   constructor(name, id, email, officeNumber) {
+//     super(name, id, email);
+//     this.officeNumber = officeNumber;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   getId() {
+//     return this.id;
+//   }
+//   getEmail() {
+//     return this.email;
+//   }
+//   getOfficeNum() {
+//     return this.officeNumber;
+//   }
+// }
+
+// const manager = new Manager(name, id, email, officeNumber);
+
 function generateManager(answers) {
   return `<!DOCTYPE html>
     <html>
@@ -23,8 +46,8 @@ function generateManager(answers) {
               <div class="header">
                 <img id="icon" src="../Assets/icons/manager_gradient.png" />
                 <div class="nameTitle">
-                <h2 id="employeeName">${answers.manager_name}</h2>
-                <h3 id="jobTitle">Team Manager</h3>
+                <h2>${answers.manager_name}</h2>
+                <h3>Team Manager</h3>
                 </div>
               </div>
               <div class="details">
@@ -34,9 +57,9 @@ function generateManager(answers) {
                   <h4>Office #:</h4>
                 </div>
                 <div class="answers">
-                  <h4 id="idNum">${answers.manager_id}</h4>
-                  <h4 id="email">${answers.manager_email}</h4>
-                  <h4 id="officeNum">${answers.manager_office}</h4>
+                  <h4>${answers.manager_id}</h4>
+                  <h4><a href="mailto:${answers.manager_email}">${answers.manager_email}</a></h4>
+                  <h4>${answers.manager_office}</h4>
                 </div>
               </div>
             </div>

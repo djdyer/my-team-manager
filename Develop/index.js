@@ -4,20 +4,11 @@ const fs = require("fs");
 const generateCSS = require("./generateStyle.js");
 const generateManager = require("./manager.js");
 const inquirerEngineer = require("./engineer.js");
-// const generateEngineer = require("./engineer.js");
+const generateEngineer = require("./engineer.js");
 const inquirerDesigner = require("./designer.js");
-// const generateDesigner = require("./designer.js");
+const generateDesigner = require("./designer.js");
 const inquirerIntern = require("./intern.js");
-// const generateIntern = require("./intern.js");
-
-// class Employee {
-//   constructor(name, id, email) {
-//     this.name = name;
-//     this.id = id;
-//     this.email = email;
-//   }
-// }
-// module.exports = Employee;
+const generateIntern = require("./intern.js");
 
 // First object prompts for team manager info
 const managerPrompts = [
@@ -49,7 +40,22 @@ const managerPrompts = [
   },
 ];
 
+// class Employee {
+//   constructor(name, id, email) {
+//     this.name = name;
+//     this.id = id;
+//     this.email = email;
+//   }
+//   getName() {}
+//   getId() {}
+//   getEmail() {}
+//   getRole() {}
+// }
+
+// module.exports = { Employee };
+
 // Function to initialize app
+
 function startTeam() {
   inquirer.prompt(managerPrompts).then((answers) => {
     console.log(answers);
@@ -65,62 +71,62 @@ function startTeam() {
         console.log(err);
       }
     });
-    if (answers.employee_type === "Engineer") {
-      inquirerEngineer();
-    } else if (answers.employee_type === "Designer") {
-      inquirerDesigner();
-    } else if (answers.employee_type === "Intern") {
-      inquirerIntern();
-    } else {
-      // closeHTML();
+    switch (answers.employee_type) {
+      case "Engineer":
+        inquirerEngineer();
+        break;
+      case "Designer":
+        inquirerDesigner();
+        break;
+      case "Intern":
+        inquirerIntern();
+        break;
+      default:
+        // closeHTML();
+        break;
     }
   });
 }
 
 startTeam();
 
-// function addEngineer() {
-//   inquirer.prompt(engineerPrompts).then((answers) => {
-//     console.log(answers);
-//     const engineer = generateEngineer(answers);
-//     fs.reWriteFile("index.html", engineer, function (err) {
-//       if (err) {
-//         console.log(err);
-//       }
-//     });
-//   });
-// }
-// addEngineer();
+function addEngineer(answersEngineer) {
+  console.log(answersEngineer);
+  const engineer = generateEngineer(answersEngineer);
+  fs.appendFile("index.html", engineer, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
 
-// function addDesigner() {
-//   inquirer.prompt(designerPrompts).then((answers) => {
-//     console.log(answers);
-//     const designer = generateDesigner(answers);
-//     fs.reWriteFile("index.html", designer, function (err) {
-//       if (err) {
-//         console.log(err);
-//       }
-//     });
-//   });
-// }
-// addDesigner();
+function addDesigner(answersDesigner) {
+  console.log(answersDesigner);
+  const designer = generateDesigner(answersDesigner);
+  fs.appendFile("index.html", designer, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
 
-// function addIntern() {
-//   inquirer.prompt(internPrompts).then((answers) => {
-//     console.log(answers);
-//     const intern = generateIntern(answers);
-//     fs.reWriteFile("index.html", intern, function (err) {
-//       if (err) {
-//         console.log(err);
-//       }
-//     });
-//   });
-// }
-// addIntern();
+function addIntern(answersIntern) {
+  console.log(answersIntern);
+  const intern = generateIntern(answersIntern);
+  fs.appendFile("index.html", intern, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
+
+module.exports = addEngineer;
+module.exports = addDesigner;
+module.exports = addIntern;
 
 // function closeHTML() {
 //   const closeHTML = `</main></body></html>`;
-//   fs.reWriteFile("index.html", closeHTML, function (err) {
+//   fs.appendFile("index.html", closeHTML, function (err) {
 //       if (err) {
 //         console.log(err);
 //       }

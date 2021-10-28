@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const addIntern = require("./index");
+// const Employee = require("./index.js");
 
 // Prompts to complete Intern card
 const internPrompts = [
@@ -33,17 +35,43 @@ const internPrompts = [
 function inquirerIntern() {
   inquirer
     .prompt(internPrompts)
-    .then((answersIntern) => generateIntern(answersIntern));
-  if (answersIntern.employee_type === "Engineer") {
-    inquirerEngineer();
-  } else if (answersIntern.employee_type === "Designer") {
-    inquirerDesigner();
-  } else if (answersIntern.employee_type === "Intern") {
-    inquirerIntern();
-  } else {
-    // closeHTML();
+    .then((answersIntern) => addIntern(answersIntern));
+  switch (answersIntern.employee_type) {
+    case "Engineer":
+      inquirerEngineer();
+      break;
+    case "Designer":
+      inquirerDesigner();
+      break;
+    case "Intern":
+      inquirerIntern();
+      break;
+    default:
+      // closeHTML();
+      break;
   }
 }
+
+// class Intern extends Employee {
+//   constructor(name, id, email, github) {
+//     super(name, id, email);
+//     this.school = school;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   getId() {
+//     return this.id;
+//   }
+//   getEmail() {
+//     return this.email;
+//   }
+//   getSchool() {
+//     return this.school;
+//   }
+// }
+
+// const intern = new Intern(name, id, email, github);
 
 function generateIntern(answersIntern) {
   return `

@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const addDesigner = require("./index.js");
+// const Employee = require("./index.js");
 
 // Prompts to complete Designer card
 const designerPrompts = [
@@ -33,17 +35,43 @@ const designerPrompts = [
 function inquirerDesigner() {
   inquirer
     .prompt(designerPrompts)
-    .then((answersDesigner) => generateDesigner(answersDesigner));
-  if (answersDesigner.employee_type === "Engineer") {
-    inquirerEngineer();
-  } else if (answersDesigner.employee_type === "Designer") {
-    inquirerDesigner();
-  } else if (answersDesigner.employee_type === "Intern") {
-    inquirerIntern();
-  } else {
-    // closeHTML();
+    .then((answersDesigner) => addDesigner(answersDesigner));
+  switch (answersDesigner.employee_type) {
+    case "Engineer":
+      inquirerEngineer();
+      break;
+    case "Designer":
+      inquirerDesigner();
+      break;
+    case "Intern":
+      inquirerIntern();
+      break;
+    default:
+      // closeHTML();
+      break;
   }
 }
+
+// class Designer extends Employee {
+//   constructor(name, id, email, portfolio) {
+//     super(name, id, email);
+//     this.portfolio = portfolio;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   getId() {
+//     return this.id;
+//   }
+//   getEmail() {
+//     return this.email;
+//   }
+//   getPortfolio() {
+//     return this.portfolio;
+//   }
+// }
+
+// const designer = new Designer(name, id, email, github);
 
 function generateDesigner(answersDesigner) {
   return `

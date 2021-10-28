@@ -1,13 +1,6 @@
 const inquirer = require("inquirer");
-
+const addEngineer = require("./index.js");
 // const Employee = require("./index.js");
-
-// class Engineer extends Employee {
-//   constructor(name, id, email, github) {
-//     super(name, id, email);
-//     this.github = github;
-//   }
-// }
 
 // Prompts to complete Engineer card
 const engineerPrompts = [
@@ -43,16 +36,42 @@ function inquirerEngineer() {
   inquirer
     .prompt(engineerPrompts)
     .then((answersEngineer) => generateEngineer(answersEngineer));
-  if (answersEngineer.employee_type === "Engineer") {
-    inquirerEngineer();
-  } else if (answersEngineer.employee_type === "Designer") {
-    inquirerDesigner();
-  } else if (answersEngineer.employee_type === "Intern") {
-    inquirerIntern();
-  } else {
-    // closeHTML();
+  switch (answersEngineer.employee_type) {
+    case "Engineer":
+      inquirerEngineer();
+      break;
+    case "Designer":
+      inquirerDesigner();
+      break;
+    case "Intern":
+      inquirerIntern();
+      break;
+    default:
+      // closeHTML();
+      break;
   }
 }
+
+// class Engineer extends Employee {
+//   constructor(name, id, email, github) {
+//     super(name, id, email);
+//     this.github = github;
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   getId() {
+//     return this.id;
+//   }
+//   getEmail() {
+//     return this.email;
+//   }
+//   getGithub() {
+//     return this.github;
+//   }
+// }
+
+// const engineer = new Engineer(name, id, email, github);
 
 function generateEngineer(answersEngineer) {
   return `
