@@ -1,14 +1,25 @@
 // Required packages for application to run:
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateManager = require("./manager.js");
 const generateCSS = require("./generateStyle.js");
+const generateManager = require("./manager.js");
+const inquirerEngineer = require("./engineer.js");
 // const generateEngineer = require("./engineer.js");
+const inquirerDesigner = require("./designer.js");
 // const generateDesigner = require("./designer.js");
+const inquirerIntern = require("./intern.js");
 // const generateIntern = require("./intern.js");
 
-// Object arrays for all employee types
-// First object is prompts for team manager card
+// class Employee {
+//   constructor(name, id, email) {
+//     this.name = name;
+//     this.id = id;
+//     this.email = email;
+//   }
+// }
+// module.exports = Employee;
+
+// First object prompts for team manager info
 const managerPrompts = [
   {
     type: "input",
@@ -26,91 +37,15 @@ const managerPrompts = [
     name: "manager_email",
   },
   {
-    type: "number",
+    type: "input",
     message: "What is the Team Manager's office number?",
     name: "manager_office",
   },
-];
-
-// Second object is SINGLE / MULTI-CHOICE prompt to add new team members or finish
-const addTeam = [
   {
     type: "list",
     message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finish"],
+    choices: ["Engineer", "Designer", "Intern", "Finished"],
     name: "employee_type",
-  },
-];
-
-// Prompts to complete Engineer card
-const engineerPrompts = [
-  {
-    type: "input",
-    message: "What is your Engineer's name??",
-    name: "engineer_name",
-  },
-  {
-    type: "number",
-    message: "The is your Engineer's employee ID?",
-    name: "engineer_id",
-  },
-  {
-    type: "input",
-    message: "What is your Engineer's email address?",
-    name: "engineer_email",
-  },
-  {
-    type: "input",
-    message: "What is your Engineer's GitHub?",
-    name: "engineer_github",
-  },
-];
-
-// Prompts to complete Designer card
-const designerPrompts = [
-  {
-    type: "input",
-    message: "What is your Designer's name??",
-    name: "designer_name",
-  },
-  {
-    type: "number",
-    message: "The is your Designer's employee ID?",
-    name: "designer_id",
-  },
-  {
-    type: "input",
-    message: "What is your Designer's email address?",
-    name: "designer_email",
-  },
-  {
-    type: "input",
-    message: "What is your Designer's portfolio link?",
-    name: "designer_portfolio",
-  },
-];
-
-// Prompts to complete Intern card
-const internPrompts = [
-  {
-    type: "input",
-    message: "What is your Intern's name??",
-    name: "intern_name",
-  },
-  {
-    type: "number",
-    message: "The is your Intern's employee ID?",
-    name: "intern_id",
-  },
-  {
-    type: "input",
-    message: "What is your Intern's email address?",
-    name: "intern_email",
-  },
-  {
-    type: "input",
-    message: "What is your Intern's school?",
-    name: "intern_school",
   },
 ];
 
@@ -130,22 +65,19 @@ function startTeam() {
         console.log(err);
       }
     });
-    // return buildTeam();
+    if (answers.employee_type === "Engineer") {
+      inquirerEngineer();
+    } else if (answers.employee_type === "Designer") {
+      inquirerDesigner();
+    } else if (answers.employee_type === "Intern") {
+      inquirerIntern();
+    } else {
+      // closeHTML();
+    }
   });
 }
 
-// Call to initialize app
 startTeam();
-
-// Function to build team
-// function buildTeam() {
-//   inquirer.prompt(addTeam).then((answer) => {
-//     console.log(answer);
-//   });
-// }
-
-// Call to build team
-// buildTeam();
 
 // function addEngineer() {
 //   inquirer.prompt(engineerPrompts).then((answers) => {
@@ -185,3 +117,12 @@ startTeam();
 //   });
 // }
 // addIntern();
+
+// function closeHTML() {
+//   const closeHTML = `</main></body></html>`;
+//   fs.reWriteFile("index.html", closeHTML, function (err) {
+//       if (err) {
+//         console.log(err);
+//       }
+//     });
+// }

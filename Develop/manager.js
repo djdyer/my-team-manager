@@ -17,6 +17,7 @@ function generateManager(answers) {
           <h1>My Team Manager</h1>
         </header>
         <main>
+        
           <article class="card-border">
             <di class="card">
               <div class="header">

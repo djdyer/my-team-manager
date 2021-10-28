@@ -72,6 +72,8 @@ Email address clicks to populate default email program with TO field loaded.
 
 GitHub username clicks to open profile in new tab.
 
+Portfolio link clicks to open portfolio in new tab.
+
 ```
 
 <br />
