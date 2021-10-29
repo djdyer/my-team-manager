@@ -3,61 +3,18 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateCSS = require("./generateStyle.js");
 const generateManager = require("./manager.js");
-const inquirerEngineer = require("./engineer.js");
-const generateEngineer = require("./engineer.js");
-const inquirerDesigner = require("./designer.js");
-const generateDesigner = require("./designer.js");
-const inquirerIntern = require("./intern.js");
-const generateIntern = require("./intern.js");
-
-// First object prompts for team manager info
-const managerPrompts = [
-  {
-    type: "input",
-    message: "What is the Team Manager's name?",
-    name: "manager_name",
-  },
-  {
-    type: "number",
-    message: "The is the Team Manager's employee ID?",
-    name: "manager_id",
-  },
-  {
-    type: "input",
-    message: "What is the Team Manager's email address?",
-    name: "manager_email",
-  },
-  {
-    type: "input",
-    message: "What is the Team Manager's office number?",
-    name: "manager_office",
-  },
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finished"],
-    name: "employee_type",
-  },
-];
-
-// class Employee {
-//   constructor(name, id, email) {
-//     this.name = name;
-//     this.id = id;
-//     this.email = email;
-//   }
-//   getName() {}
-//   getId() {}
-//   getEmail() {}
-//   getRole() {}
-// }
-
-// module.exports = { Employee };
+const Employee = require("./Classes/employee.js");
+// const inquirerEngineer = require("./engineer.js");
+// const generateEngineer = require("./engineer.js");
+// const inquirerDesigner = require("./designer.js");
+// const generateDesigner = require("./designer.js");
+// const inquirerIntern = require("./intern.js");
+// const generateIntern = require("./intern.js");
 
 // Function to initialize app
 
 function startTeam() {
-  inquirer.prompt(managerPrompts).then((answers) => {
+  inquirer.prompt(managerPrompts).then((Employee) => {
     console.log(answers);
     const style = generateCSS();
     const manager = generateManager(answers);
@@ -120,9 +77,9 @@ function addIntern(answersIntern) {
   });
 }
 
-module.exports = addEngineer;
-module.exports = addDesigner;
-module.exports = addIntern;
+// module.exports = addEngineer;
+// module.exports = addDesigner;
+// module.exports = addIntern;
 
 // function closeHTML() {
 //   const closeHTML = `</main></body></html>`;
