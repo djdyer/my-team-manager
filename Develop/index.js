@@ -1,10 +1,10 @@
 // Required packages for application to run:
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Manager = require("./Classes/manager");
-const Engineer = require("./Classes/engineer");
-const Designer = require("./Classes/designer");
-const Intern = require("./Classes/intern");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Designer = require("./lib/designer");
+const Intern = require("./lib/intern");
 
 // First object prompts for team manager info
 const managerPrompts = [
@@ -231,7 +231,7 @@ function startTeam() {
     margin: 0 30px 0 10px;
   }
 `;
-  fs.writeFile("style.css", style, function (err) {
+  fs.writeFile("./dist/style.css", style, function (err) {
     if (err) {
       console.log(err);
     }
@@ -279,7 +279,7 @@ function startTeam() {
             </div>
           </article>
   `;
-  fs.writeFile("index.html", html, function (err) {
+  fs.writeFile("./dist/index.html", html, function (err) {
     if (err) {
       console.log(err);
     }
@@ -290,7 +290,7 @@ function buildTeam() {
   inquirer.prompt(managerPrompts).then((answers) => {
     console.log(answers);
     const manager = generateEngineer(answers);
-    fs.appendFile("index.html", engineer, function (err) {
+    fs.appendFile("./dist/index.html", engineer, function (err) {
       if (err) {
         console.log(err);
       }
