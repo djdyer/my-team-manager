@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateCSS = require("./generateStyle.js");
-const generateManager = require("./manager.js");
+const generateManager = require("./Classes/manager.js");
 const Employee = require("./Classes/employee.js");
 // const inquirerEngineer = require("./engineer.js");
 // const generateEngineer = require("./engineer.js");
@@ -14,16 +14,16 @@ const Employee = require("./Classes/employee.js");
 // Function to initialize app
 
 function startTeam() {
-  inquirer.prompt(managerPrompts).then((Employee) => {
-    console.log(answers);
+  inquirer.prompt(managerPrompts).then((manager) => {
+    console.log(manager);
     const style = generateCSS();
-    const manager = generateManager(answers);
+    const html = generateManager(manager);
     fs.writeFile("style.css", style, function (err) {
       if (err) {
         console.log(err);
       }
     });
-    fs.writeFile("index.html", manager, function (err) {
+    fs.writeFile("index.html", html, function (err) {
       if (err) {
         console.log(err);
       }
@@ -47,35 +47,35 @@ function startTeam() {
 
 startTeam();
 
-function addEngineer(answersEngineer) {
-  console.log(answersEngineer);
-  const engineer = generateEngineer(answersEngineer);
-  fs.appendFile("index.html", engineer, function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-}
+// function addEngineer(answersEngineer) {
+//   console.log(answersEngineer);
+//   const engineer = generateEngineer(answersEngineer);
+//   fs.appendFile("index.html", engineer, function (err) {
+//     if (err) {
+//       console.log(err);
+//     }
+//   });
+// }
 
-function addDesigner(answersDesigner) {
-  console.log(answersDesigner);
-  const designer = generateDesigner(answersDesigner);
-  fs.appendFile("index.html", designer, function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-}
+// function addDesigner(answersDesigner) {
+//   console.log(answersDesigner);
+//   const designer = generateDesigner(answersDesigner);
+//   fs.appendFile("index.html", designer, function (err) {
+//     if (err) {
+//       console.log(err);
+//     }
+//   });
+// }
 
-function addIntern(answersIntern) {
-  console.log(answersIntern);
-  const intern = generateIntern(answersIntern);
-  fs.appendFile("index.html", intern, function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-}
+// function addIntern(answersIntern) {
+//   console.log(answersIntern);
+//   const intern = generateIntern(answersIntern);
+//   fs.appendFile("index.html", intern, function (err) {
+//     if (err) {
+//       console.log(err);
+//     }
+//   });
+// }
 
 // module.exports = addEngineer;
 // module.exports = addDesigner;

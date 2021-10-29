@@ -31,6 +31,8 @@ const managerPrompts = [
   },
 ];
 
+module.exports = managerPrompts;
+
 class Manager extends Employee {
   constructor(name, id, email, officeNumber) {
     super(name, id, email);
@@ -45,12 +47,14 @@ class Manager extends Employee {
   getEmail() {
     return this.email;
   }
-  getPortfolio() {
+  getOfficeNum() {
     return this.officeNumber;
   }
 }
 
 const manager = new Manager(name, id, email, officeNumber);
+
+module.exports = manager;
 
 function generateManager(manager) {
   return `<!DOCTYPE html>
@@ -99,3 +103,4 @@ function generateManager(manager) {
 }
 
 module.exports = managerPrompts;
+module.exports = generateManager;
