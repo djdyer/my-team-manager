@@ -6,134 +6,13 @@ const Engineer = require("./lib/engineer");
 const Designer = require("./lib/designer");
 const Intern = require("./lib/intern");
 
-let team = [];
-
-// First object prompts for team manager info
-const managerPrompts = [
-  {
-    type: "input",
-    message: "What is the Team Manager's name?",
-    name: "name",
-  },
-  {
-    type: "number",
-    message: "The is the Team Manager's employee ID?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is the Team Manager's email address?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is the Team Manager's office number?",
-    name: "officeNumber",
-  },
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finished"],
-    name: "employee_type",
-  },
-];
-
-// Prompts to complete Engineer card
-const engineerPrompts = [
-  {
-    type: "input",
-    message: "What is your Engineer's name??",
-    name: "name",
-  },
-  {
-    type: "number",
-    message: "The is your Engineer's employee ID?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your Engineer's email address?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your Engineer's GitHub username?",
-    name: "github",
-  },
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finished"],
-    name: "employee_type",
-  },
-];
-
-// Prompts to complete Designer card
-const designerPrompts = [
-  {
-    type: "input",
-    message: "What is your Designer's name??",
-    name: "name",
-  },
-  {
-    type: "number",
-    message: "The is your Designer's employee ID?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your Designer's email address?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your Designer's portfolio link?",
-    name: "portfolio",
-  },
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finished"],
-    name: "employee_type",
-  },
-];
-
-// Prompts to complete Intern card
-const internPrompts = [
-  {
-    type: "input",
-    message: "What is your Intern's name??",
-    name: "name",
-  },
-  {
-    type: "number",
-    message: "The is your Intern's employee ID?",
-    name: "id",
-  },
-  {
-    type: "input",
-    message: "What is your Intern's email address?",
-    name: "email",
-  },
-  {
-    type: "input",
-    message: "What is your Intern's school?",
-    name: "school",
-  },
-  {
-    type: "list",
-    message: "Would you like to add another team member?",
-    choices: ["Engineer", "Designer", "Intern", "Finished"],
-    name: "employee_type",
-  },
-];
-
+// Function to initialize app
 function init() {
   startPage();
   managerFirst();
 }
 
-// Function to initialize app
+// Writes style sheet
 function startPage() {
   const style = `* {
     margin: 0;
@@ -197,6 +76,12 @@ function startPage() {
     flex-direction: column;
   }
   
+
+ .label
+   {
+    color: #7b79e2;
+  }
+
   .card-border {
     width: 380px;
     height: fit-content;
@@ -245,6 +130,38 @@ function startPage() {
   });
 }
 
+// Initialize start team with empty array
+let team = [];
+
+// First prompts are for team manager info
+const managerPrompts = [
+  {
+    type: "input",
+    message: "What is the Team Manager's name?",
+    name: "name",
+  },
+  {
+    type: "number",
+    message: "The is the Team Manager's employee ID?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is the Team Manager's email address?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is the Team Manager's office number?",
+    name: "officeNumber",
+  },
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Engineer", "Designer", "Intern", "Finished"],
+    name: "employee_type",
+  },
+];
 function managerFirst() {
   inquirer.prompt(managerPrompts).then((answers) => {
     var manager = new Manager(
@@ -271,6 +188,35 @@ function managerFirst() {
   });
 }
 
+// Prompts for Engineer
+const engineerPrompts = [
+  {
+    type: "input",
+    message: "What is the Engineer's name??",
+    name: "name",
+  },
+  {
+    type: "number",
+    message: "The is the Engineer's employee ID?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is the Engineer's email address?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is the Engineer's GitHub username?",
+    name: "gitHub",
+  },
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Engineer", "Designer", "Intern", "Finished"],
+    name: "employee_type",
+  },
+];
 function inquirerEngineer() {
   inquirer.prompt(engineerPrompts).then((answers) => {
     var engineer = new Engineer(
@@ -297,6 +243,35 @@ function inquirerEngineer() {
   });
 }
 
+// Prompts for Designer
+const designerPrompts = [
+  {
+    type: "input",
+    message: "What is the Designer's name??",
+    name: "name",
+  },
+  {
+    type: "number",
+    message: "The is the Designer's employee ID?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is the Designer's email address?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "Provide the Designer's portfolio URL",
+    name: "portfolio",
+  },
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Engineer", "Designer", "Intern", "Finished"],
+    name: "employee_type",
+  },
+];
 function inquirerDesigner() {
   inquirer.prompt(designerPrompts).then((answers) => {
     var designer = new Designer(
@@ -323,6 +298,35 @@ function inquirerDesigner() {
   });
 }
 
+// Prompts for Intern
+const internPrompts = [
+  {
+    type: "input",
+    message: "What is the Intern's name??",
+    name: "name",
+  },
+  {
+    type: "number",
+    message: "The is the Intern's employee ID?",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "What is the Intern's email address?",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "What is the Intern's school?",
+    name: "school",
+  },
+  {
+    type: "list",
+    message: "Would you like to add another team member?",
+    choices: ["Engineer", "Designer", "Intern", "Finished"],
+    name: "employee_type",
+  },
+];
 function inquirerIntern() {
   inquirer.prompt(internPrompts).then((answers) => {
     var intern = new Intern(
@@ -349,11 +353,12 @@ function inquirerIntern() {
   });
 }
 
-init();
-
+// Writes entire page by looping through team array
 function createHTML() {
+  // body initialized as empty string.
   var body = "";
   for (var i = 0; i < team.length; i++) {
+    // if role is equal, call create functions with object
     if (team[i].getRole() === "manager") {
       body += createManagerHTML(team[i]);
     } else if (team[i].getRole() === "engineer") {
@@ -363,6 +368,7 @@ function createHTML() {
     } else if (team[i].getRole() === "intern") {
       body += createInternHTML(team[i]);
     }
+    // body var placed inside main HTML tags. HTML written!
     var HTML = `<!DOCTYPE html>
   <html>
     <head>
@@ -400,9 +406,9 @@ function createManagerHTML(manager) {
       </div>
       <div class="details">
         <div class="labels">
-          <h4>ID:</h4>
-          <h4>Email:</h4>
-          <h4>Office #</h4>
+          <h4 class="label">ID:</h4>
+          <h4 class="label">Email:</h4>
+          <h4 class="label">Office #</h4>
         </div>
         <div class="this">
           <h4>${manager.id}</h4>
@@ -426,14 +432,14 @@ function createEngineerHTML(engineer) {
       </div>
       <div class="details">
         <div class="labels">
-          <h4>ID:</h4>
-          <h4>Email:</h4>
-          <h4>GitHub:</h4>
+          <h4 class="label">ID:</h4>
+          <h4 class="label">Email:</h4>
+          <h4 class="label">GitHub:</h4>
         </div>
         <div class="answers">
           <h4>${engineer.id}</h4>
           <h4><a href="mailto:${engineer.email}">${engineer.email}</a></h4>
-          <h4><a href="https://www.github.com/${engineer.github}" target="_blank">${engineer.github}</a></h4>
+          <h4><a href="https://www.github.com/${engineer.gitHub}" target="_blank">${engineer.gitHub}</a></h4>
         </div>
       </div>
     </div>
@@ -452,14 +458,14 @@ function createDesignerHTML(designer) {
     </div>
     <div class="details">
       <div class="labels">
-        <h4>ID:</h4>
-        <h4>Email:</h4>
-        <h4>Portfolio:</h4>
+        <h4 class="label">ID:</h4>
+        <h4 class="label">Email:</h4>
+        <h4 class="label">Portfolio:</h4>
       </div>
       <div class="answers">
         <h4>${designer.id}</h4>
         <h4><a href="mailto:${designer.email}">${designer.email}</a></h4>
-        <h4><a href="${designer.portfolio}" target="_blank"></a></h4>
+        <h4><a href="${designer.portfolio}" target="_blank">${designer.portfolio}</a></h4>
       </div>
     </div>
   </div>
@@ -472,22 +478,25 @@ function createInternHTML(intern) {
     <div class="header">
       <img id="icon" src="../../Assets/icons/intern_gradient.png" />
       <div class="nameTitle">
-      <h2>${answers.name}</h2>
+      <h2>${intern.name}</h2>
       <h3>Intern</h3>
       </div>
     </div>
     <div class="details">
       <div class="labels">
-        <h4>ID:</h4>
-        <h4>Email:</h4>
-        <h4>School:</h4>
+        <h4 class="label">ID:</h4>
+        <h4 class="label">Email:</h4>
+        <h4 class="label">School:</h4>
       </div>
       <div class="answers">
-        <h4>${answers.id}</h4>
-        <h4><a href="mailto:${answers.email}">${answers.email}</a></h4>
-        <h4>${answers.school}</h4>
+        <h4>${intern.id}</h4>
+        <h4><a href="mailto:${intern.email}">${intern.email}</a></h4>
+        <h4>${intern.school}</h4>
       </div>
     </div>
   </div>
 </article>`;
 }
+
+// Initial call out
+init();

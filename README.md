@@ -33,7 +33,7 @@ SO THAT I have quick access to their emails and GitHub profiles
 
 ## Installation
 
-Application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input and will run with npm install. Must type 'node index' in command-line to initialize.
+Application uses [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input and will run with `npm install`. Must type `node index` in command-line to initialize.
 
 <br />
 
@@ -80,7 +80,7 @@ Portfolio link clicks to open portfolio in new tab.
 
 ## Testing
 
-Application uses [Jest](https://www.npmjs.com/package/jest) for running all unit tests.
+Application uses [Jest](https://www.npmjs.com/package/jest) by running `npm test` in command line.
 
 <br />
 
