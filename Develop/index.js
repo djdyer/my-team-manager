@@ -500,3 +500,5 @@ function createInternHTML(intern) {
 
 // Initial call out
 init();
+
+// module.exports = createHTML;
