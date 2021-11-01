@@ -1,4 +1,4 @@
-const Employee = require("../Develop/lib/employee");
+const Employee = require("../lib/employee");
 
 describe("Employee Test", () => {
   test("all new Employees have a name, id, and email", () => {
