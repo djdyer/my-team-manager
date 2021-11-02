@@ -46,7 +46,7 @@ Copyright (c) David Dyer [2021]
 
 <br />
 
-## Screenshots / Demo
+## Demo
 
 [![](Assets/demo/team_manager_youtube_ss.png)](https://youtu.be/JRo6DSLCqNw)
 
