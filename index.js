@@ -401,7 +401,7 @@ function createManagerHTML(manager) {
   return `<article class="card-border">
     <div class="card">
       <div class="header">
-        <img id="icon" src="../../Assets/icons/manager_gradient.png" />
+        <img id="icon" src="../Assets/icons/manager_gradient.png" />
         <div class="nameTitle">
         <h2>${manager.name}</h2>
         <h3>Team Manager</h3>
@@ -427,7 +427,7 @@ function createEngineerHTML(engineer) {
   return `<article class="card-border">
     <div class="card">
       <div class="header">
-        <img id="icon" src="../../Assets/icons/engineer_gradient.png" />
+        <img id="icon" src="../Assets/icons/engineer_gradient.png" />
         <div class="nameTitle">
         <h2>${engineer.name}</h2>
         <h3>Engineer</h3>
@@ -453,7 +453,7 @@ function createDesignerHTML(designer) {
   return `<article class="card-border">
   <div class="card">
     <div class="header">
-      <img id="icon" src="../../Assets/icons/designer_gradient.png" />
+      <img id="icon" src="../Assets/icons/designer_gradient.png" />
       <div class="nameTitle">
       <h2>${designer.name}</h2>
       <h3>Designer</h3>
@@ -479,7 +479,7 @@ function createInternHTML(intern) {
   return `<article class="card-border">
   <div class="card">
     <div class="header">
-      <img id="icon" src="../../Assets/icons/intern_gradient.png" />
+      <img id="icon" src="../Assets/icons/intern_gradient.png" />
       <div class="nameTitle">
       <h2>${intern.name}</h2>
       <h3>Intern</h3>
