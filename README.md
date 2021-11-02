@@ -48,7 +48,13 @@ Copyright (c) David Dyer [2021]
 
 ## Screenshots / Demo
 
-(Must show all tests passing from the command line.)
+[![](Assets/team_manager_youtube_ss.png)](https://youtu.be/JRo6DSLCqNw)
+
+<br />
+
+<img src="Assets/demo/team_manager_terminal.png" width = "500">
+<img src="Assets/demo/team_manager_rendered.png" width = "500">
+
 <br />
 
 ## Acceptance Criteria
