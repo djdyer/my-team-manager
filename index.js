@@ -385,10 +385,12 @@ function createHTML() {
       <header>
         <h1>My Team Manager</h1>
       </header>
-      <main>${body}
+      <main>
+      ${body}
       </main>
     </body>
-  </html>`;
+  </html>
+    `;
     fs.writeFile("./dist/index.html", HTML, function (err) {
       if (err) {
         console.log(err);
@@ -398,7 +400,7 @@ function createHTML() {
 }
 
 function createManagerHTML(manager) {
-  return `<article class="card-border">
+  return `<div class="card-border">
     <div class="card">
       <div class="header">
         <img id="icon" src="../Assets/icons/manager_gradient.png" />
@@ -420,11 +422,11 @@ function createManagerHTML(manager) {
         </div>
       </div>
     </div>
-  </article>`;
+  </div>`;
 }
 
 function createEngineerHTML(engineer) {
-  return `<article class="card-border">
+  return `<div class="card-border">
     <div class="card">
       <div class="header">
         <img id="icon" src="../Assets/icons/engineer_gradient.png" />
@@ -446,11 +448,11 @@ function createEngineerHTML(engineer) {
         </div>
       </div>
     </div>
-  </article>`;
+  </div>`;
 }
 
 function createDesignerHTML(designer) {
-  return `<article class="card-border">
+  return `<div class="card-border">
   <div class="card">
     <div class="header">
       <img id="icon" src="../Assets/icons/designer_gradient.png" />
@@ -472,11 +474,11 @@ function createDesignerHTML(designer) {
       </div>
     </div>
   </div>
-</article>`;
+</div>`;
 }
 
 function createInternHTML(intern) {
-  return `<article class="card-border">
+  return `<div class="card-border">
   <div class="card">
     <div class="header">
       <img id="icon" src="../Assets/icons/intern_gradient.png" />
@@ -498,7 +500,7 @@ function createInternHTML(intern) {
       </div>
     </div>
   </div>
-</article>`;
+</div>`;
 }
 
 // Initial call out
