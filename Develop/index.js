@@ -385,7 +385,10 @@ function createHTML() {
       <header>
         <h1>My Team Manager</h1>
       </header>
-      <main>${body}</main></body></html>`;
+      <main>${body}
+      </main>
+    </body>
+  </html>`;
     fs.writeFile("./dist/index.html", HTML, function (err) {
       if (err) {
         console.log(err);
@@ -500,5 +503,3 @@ function createInternHTML(intern) {
 
 // Initial call out
 init();
-
-// module.exports = createHTML;
