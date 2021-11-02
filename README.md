@@ -8,7 +8,7 @@
 - [User Story](#user-story)
 - [Installation](#installation)
 - [License](#license)
-- [Screenshots/Demo](#screenshots-demo)
+- [Demo](#demo)
 - [Criteria](#acceptance-criteria)
 - [Testing](#testing)
 - [Collaboration](#collaboration)
